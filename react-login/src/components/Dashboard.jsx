@@ -1,6 +1,7 @@
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
+import "./Dashboard.css";
 
 const Dashboard = () => {
   const [userInfo, setUserInfo] = useState(null);
@@ -29,15 +30,33 @@ const Dashboard = () => {
   }, []);
 
   if (!userInfo) {
-    return <div>Loading...</div>;
+    return (
+      <div className="dashboard-container">
+        <div className="loading-spinner">Loading...</div>
+      </div>
+    );
   }
 
   return (
-    <div>
-      <h1>Welcome, {userInfo.name}</h1>
-      <p>Email: {userInfo.email}</p>
-      <button onClick={() => navigate("/")}>Go to Home</button>
-    </div>
+    <>
+      <Header />
+      <div className="dashboard-container">
+        <div className="dashboard-content">
+          <div className="profile-section">
+            <img 
+              src={userInfo.picture || "https://via.placeholder.com/100"} 
+              alt="Profile" 
+              className="profile-image"
+            />
+            <h1>Welcome, {userInfo.name}</h1>
+            <p className="email">{userInfo.email}</p>
+          </div>
+          <button className="logout-button" onClick={() => navigate("/")}>
+            Logout
+          </button>
+        </div>
+      </div>
+    </>
   );
 };
 

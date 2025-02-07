@@ -20,7 +20,7 @@ const Landing = () => {
           <p className="subtitle">Securely login with your Google account</p>
           <button className="google-login-btn" onClick={handleLogin}>
             <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" 
+              src="/google.png" 
               alt="Google logo" 
               className="google-icon" 
             />

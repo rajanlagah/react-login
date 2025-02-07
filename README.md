@@ -20,3 +20,10 @@ This project showcases how to implement Google OAuth 2.0 authentication in a Rea
 - 📱 Responsive Design
 
 ## Project Structure
+
+src/
+├── components/
+│ ├── Dashboard.jsx # Protected dashboard showing user profile
+│ ├── Landing.jsx # Landing page with Google login
+│ └── Header.jsx # Common header component
+└── App.js # Main routing component
